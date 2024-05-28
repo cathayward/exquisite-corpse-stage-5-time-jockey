@@ -5,6 +5,7 @@ let starFrequency = 10; // Control the frequency of star appearance
 let stars = [];
 let starDuration = 5;
 let ambiance;
+let showText = true;
 
 function preload() {
   img = loadImage('files/astronaut.png'); // Replace with the path to your image file
@@ -15,6 +16,7 @@ function setup() {
   createCanvas(windowWidth, windowHeight);
   y = -img.height; // Start the image just above the canvas
 
+  ambiance.setVolume(0.5);
   ambiance.loop();
 }
 
@@ -55,6 +57,11 @@ function draw() {
     }
   }
 
+  if (showText) {
+    fill(255);
+    text
+  }
+
   counter++;
 }
 
@@ -76,4 +83,10 @@ function drawStarShape(x, y, n, outerRadius, innerRadius, rotation) {
     vertex(x2, y2);
   }
   endShape(CLOSE);
+}
+
+function mousePressed(){
+  if(ambiance.isLoaded()) {
+    ambiance.play();
+  }
 }
