@@ -1,32 +1,33 @@
 let img;
-let y;
-let counter = 0;
-let starFrequency = 10; // Control the frequency of star appearance
-let stars = [];
-let starDuration = 5;
-let ambiance;
-let showText = true;
+let y; 
+let counter = 0; // Counter variable
+let starFrequency = 10; // Control the frequency that stars appear
+let stars = []; // Array to store star objects
+let starDuration = 5; // Duration for which stars are displayed
+let ambiance; 
+let showText = true; 
+let font; 
 
 function preload() {
-  img = loadImage('files/astronaut.png'); // Replace with the path to your image file
-  ambiance = loadSound('files/audio.mp3')
+  img = loadImage('files/astronaut.png'); 
+  ambiance = loadSound('files/audio.mp3'); 
+  font = loadFont('font.otf'); 
 }
 
 function setup() {
-  createCanvas(windowWidth, windowHeight);
+  createCanvas(windowWidth, windowHeight); 
   y = -img.height; // Start the image just above the canvas
-
-  ambiance.setVolume(0.5);
-  ambiance.loop();
+  ambiance.setVolume(0.5); // Set volume of ambiance sound
+  ambiance.loop(); // Loop the ambiance sound
 }
 
 function draw() {
-  background(0);
+  background(0); 
 
   image(img, (width - img.width) / 2, y);
+  y += 5; // Move the image downwards
 
-  y += 5;
-
+  // Reset y position if image goes beyond canvas height
   if (y > height) {
     y = -img.height;
   }
@@ -44,6 +45,7 @@ function draw() {
     });
   }
 
+  // Draw and manage stars
   for (let i = stars.length - 1; i >= 0; i--) {
     let star = stars[i];
     let elapsedTime = (millis() - star.createdAt) / 1000; // Calculate elapsed time in seconds
@@ -59,11 +61,15 @@ function draw() {
 
   if (showText) {
     fill(255);
-    text
+    textSize(30);
+    textAlign(CENTER, CENTER);
+    textFont(font);
+    text("click to enter the void", windowWidth / 2, windowHeight / 2);
   }
 
-  counter++;
+  counter++; 
 }
+
 
 function windowResized() {
   resizeCanvas(windowWidth, windowHeight);
@@ -85,8 +91,9 @@ function drawStarShape(x, y, n, outerRadius, innerRadius, rotation) {
   endShape(CLOSE);
 }
 
-function mousePressed(){
-  if(ambiance.isLoaded()) {
-    ambiance.play();
+function mousePressed() {
+  if (ambiance.isLoaded()) {
+    ambiance.play(); // Play ambiance sound if loaded
   }
+  showText = false; // Hide text when mouse is pressed
 }
