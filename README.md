@@ -71,8 +71,12 @@ I wanted to get across how overwhelming it can feel being online in this day and
 - theres probably some typos in the text lol. it was so hard to format the text in code, especially splitting up each line manually by having to add a backwards slash + 'n' every. single. few. words.
 
 ### 🟪 Stage 5
-- Name/Alias:
-- Github account:
-- Published webpage for stage 5:
+- Name/Alias: Cat
+- Github account: https://github.com/cathayward
+- Published webpage for stage 5: https://cathayward.github.io/exquisite-corpse-stage-5-time-jockey/
 
-*... comments to be added here*
+Looking at what Odette had created, I was struck by the ending frame of the horse in the void. It made me think back to the code I created in stage one so I decided to use the star function I created for that, to call back to it. When I think of a void, I often think of space, hence the stars. However, I wanted to explore the notion of being stuck in the void endlessly. 
+
+The astronaut figure is constantly falling through the void, as stars appear and disapper, showing a passage of time. I also found some audio released by NASA that displays the sounds they picked up from a black hole. I beleive that it is so eerie that it works perfectly with the notion of the void. I wanted to give the viewer this feeling of helplessness, the astronaut is just falling endlessly as the environment around him changes entirely. Stars are bron and die, and the black hole ambiance ebbs and flows, creating this atmosphere of helplessness and eerieness.
+
+Some of this code, namely the star functions were sourced from my own work in stage one, and some aspects I struggled with for a while trying to get it right before turning to Youtube, and a little bit of ChatGPT to help make the stars disappear.
